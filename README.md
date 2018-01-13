@@ -1,2 +1,2 @@
 # Project
-Tourist attraction of Ukraine
+Tourist attractions of Ukraine
