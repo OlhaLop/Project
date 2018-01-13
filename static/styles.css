@@ -1,0 +1,65 @@
+html, body, .container-fluid, #map-canvas
+{
+    height:100%;
+}
+
+.container-fluid
+{
+    width:100%;
+    position:absolute;
+    top:0;
+    padding:0;
+    z-index: 1;
+    border-top:182px solid #fff;
+}
+
+#main
+{
+    z-index: 2;
+    position:absolute;
+}
+
+#form
+{
+    /* form's width */
+    width: 100%;
+}
+
+.form-group
+{
+    margin-bottom: 10px;
+}
+
+/* stylize text box */
+#type_selection, #region_selection
+{
+    /* */
+    background-color: #ffffff;
+
+    /* text box's width */
+    width: 200px;
+
+    display: block;
+}
+
+/* stylize info window */
+#info
+{
+    /* no margin around this element */
+    margin: 0;
+
+    /* allow scrollbars as needed */
+    overflow: auto;
+}
+
+.inline
+{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#image
+{
+    vertical-align: top;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- http://getbootstrap.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- app's own CSS -->
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+
+        <!-- https://developers.google.com/maps/documentation/javascript/ -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqrx1bsUgDyNWwDJimAtrwM3IlUp_WMNU&v=3.exp"></script>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- http://getbootstrap.com/ -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- http://stewartjpark.com/Flask-JSGlue/ -->
+        {{ JSGlue.include() }}
+
+        <!-- app's own JavaScript -->
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+        <title>Places</title>
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="image" class="inline">
+                <img src="/static/image4.jpg" >
+            </div>
+
+            <div class="inline">
+                <form id="form" >
+                    <div class="form-group">
+                        <label for="region_selection">Область:</label>
+                        <select class="form-control" id="region_selection" name="region">
+                            <option value="all_ukraine" selected>Вся Україна</option>
+                            <option value="4">Автономна республіка Крим</option>
+                            <option value="5">Вінницька</option>
+                            <option value="3">Волинська</option>
+                            <option value="6">Дніпропетровська</option>
+                            <option value="7">Донецька</option>
+                            <option value="8">Житомирська</option>
+                            <option value="2">Закарпатська</option>
+                            <option value="9">Запорізька</option>
+                            <option value="10">Івано-Франківська</option>
+                            <option value="1">Київська</option>
+                            <option value="11">Кіровоградська</option>
+                            <option value="12">Луганська</option>
+                            <option value="13">Львівська</option>
+                            <option value="14">Миколаївська</option>
+                            <option value="15">Одеська</option>
+                            <option value="16">Полтавська</option>
+                            <option value="17">Рівненська</option>
+                            <option value="18">Сумська</option>
+                            <option value="19">Тернопільська</option>
+                            <option value="20">Харківська</option>
+                            <option value="21">Херсонська</option>
+                            <option value="22">Хмельницька</option>
+                            <option value="23">Черкаська</option>
+                            <option value="24">Чернівецька</option>
+                            <option value="25">Чернігівська</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type_selection">Тип пам'ятки:</label>
+                        <select class="form-control" id="type_selection" name="type">
+                            <option value="all" selected>Всі</option>
+                            <option value="arch">Пам'ятка архітектури</option>
+                            <option value="nature">Природна пам'ятка</option>
+                        </select>
+                    </div>
+
+                    <button name="submit" type="submit" class="btn btn-default">Знайти</button>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- fill the rest of viewport -->
+        <div class="container-fluid">
+
+            <!-- https://developers.google.com/maps/documentation/javascript/tutorial -->
+            <div id="map-canvas"></div>
+
+        </div>
+
+    </body>
+</html>
